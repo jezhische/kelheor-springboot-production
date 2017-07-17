@@ -57,6 +57,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>kelheor-sbp</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
