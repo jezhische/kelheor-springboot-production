@@ -1,5 +1,6 @@
 package com.jezh.kelheorspringbootproduction.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.UUID;
 
@@ -7,6 +8,7 @@ import java.util.UUID;
  * Created by WORK_x64 on 17.07.2017.
  */
 //@Table(name = "kelh_data")
+//@Entity
 public class Data implements DomainObject {
 
     private UUID id;

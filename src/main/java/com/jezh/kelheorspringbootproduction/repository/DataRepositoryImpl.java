@@ -25,21 +25,21 @@ public class DataRepositoryImpl implements DataRepository<Data> {
         Object[] params = new Object[] { object.getId(), object.getDescription() };
         int[] types = new int[] { Types.VARCHAR, Types.VARCHAR };
 
-        jdbcOperations.update("INSERT INTO yourapp_data(\n" +
+        jdbcOperations.update("INSERT INTO kelh_data(\n" +
                 "            data_id, data_description)\n" +
                 "    VALUES (cast(? as UUID), ?);", params, types);
     }
 
     @Override
     public void delete(Data object) {
-        jdbcOperations.update("DELETE FROM yourapp_data\n" +
+        jdbcOperations.update("DELETE FROM kelh_data\n" +
                 " WHERE data_id = '" + object.getId().toString() + "';");
     }
 
     @Override
     public Set<String> getRandomData() {
         Set<String> result = new HashSet<>();
-        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT data_description FROM yourapp_data p ORDER BY RANDOM() LIMIT 50;");
+        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT data_description FROM kelh_data p ORDER BY RANDOM() LIMIT 50;");
         while (rowSet.next()) {
             result.add(rowSet.getString("data_description"));
         }
